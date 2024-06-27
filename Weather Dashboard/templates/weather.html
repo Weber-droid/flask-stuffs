@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Details</title>
+</head>
+<body>
+    
+    {% if error %}
+        <p>{{ error }}</p>
+    {% else %}
+        <h1>Weather Details for {{ weather.name }}</h1>
+       <!-- <p>Temperature: {{ weather.main.temp }} &#8451;</p> -->
+        <p>Weather: {{ weather.weather[0].description }}</p>
+       <!-- <p>Humidity: {{ weather.main.humidity }}%</p> -->
+        <p>Wind Speed: {{ weather.wind.speed }} m/s</p>
+    {% endif %}
+</body>
+</html>

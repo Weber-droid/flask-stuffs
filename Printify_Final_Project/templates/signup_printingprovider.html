@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Printing Provider Signup{% endblock %}
+
+{% block content %}
+<h2>Printing Provider Signup</h2>
+<form method="POST">
+    <label for="name_of_shop">Name of Shop:</label>
+    <input type="text" id="name_of_shop" name="name_of_shop" required>
+    
+    <label for="location">Location:</label>
+    <input type="text" id="location" name="location" required>
+    
+    <label for="phone_number">Phone Number:</label>
+    <input type="text" id="phone_number" name="phone_number" required>
+    
+    <label for="working_days">Working Days:</label>
+    <div class="checkbox-group">
+        <label><input type="checkbox" id="monday" name="working_days" value="Monday"> Monday</label>
+        <label><input type="checkbox" id="tuesday" name="working_days" value="Tuesday"> Tuesday</label>
+        <label><input type="checkbox" id="wednesday" name="working_days" value="Wednesday"> Wednesday</label>
+        <label><input type="checkbox" id="thursday" name="working_days" value="Thursday"> Thursday</label>
+        <label><input type="checkbox" id="friday" name="working_days" value="Friday"> Friday</label>
+        <label><input type="checkbox" id="saturday" name="working_days" value="Saturday"> Saturday</label>
+        <label><input type="checkbox" id="sunday" name="working_days" value="Sunday"> Sunday</label>
+    </div>
+    
+    <label for="services_provided">Services Provided:</label>
+    <div class="checkbox-group">
+        <label><input type="checkbox" id="graphic_design" name="services_provided" value="Graphic Design"> Graphic Design</label>
+        <label><input type="checkbox" id="document_printing" name="services_provided" value="Document Printing"> Document Printing</label>
+        <label><input type="checkbox" id="large_format_printing" name="services_provided" value="Large Format Printing"> Large Format Printing</label>
+        <label><input type="checkbox" id="tshirt_printing" name="services_provided" value="TShirt Printing"> TShirt Printing</label>
+    </div>
+    
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    
+    <button type="submit">Sign Up</button>
+</form>
+
+<div class="account-link">
+    <p>Already have an account? <a href="{{ url_for('login_printingprovider') }}">Log in here</a></p>
+</div>
+{% endblock %}

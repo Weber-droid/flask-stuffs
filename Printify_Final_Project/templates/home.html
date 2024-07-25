@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Printify</title>
+    <link rel="icon" href="{{ url_for('static', filename='P_image.jpg') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    {% block styles %}{% endblock  %}
+</head>
+
+{% block content %}
+    <nav class="navbar">
+        <div class="logo">
+            <!--<img src="{{ url_for('static', filename='P_image.jpg') }}" alt="Printify Logo">-->
+            <span>E-PRINT HUB</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-signup">
+            <a href="/sign_up">Sign Up</a>
+        </div>
+    </nav>
+
+    <section class="gallery" id="home">
+        <div class="gallery-item"><img src="{{ url_for('static', filename='printer_3.jpg') }}" alt="Image 1"></div>
+        <div class="gallery-item"><img src="{{ url_for('static', filename='printer_2.jpg') }}" alt="Image 2"></div>
+        <div class="gallery-item"><img src="{{ url_for('static', filename='printer_1.jpg') }}" alt="Image 3"></div>
+        <div class="gallery-item"><img src="{{ url_for('static', filename='printer_4.jpg') }}" alt="Image 4"></div>
+        <div class="gallery-item"><img src="{{ url_for('static', filename='printer_5.jpg') }}" alt="Image 5"></div>
+        
+        <!-- Add more images as needed -->
+    </section>
+
+    <section class="main-content">
+        <div class="text">
+            <h1>Connect with us for your printing services</h1>
+            <p>Your one-stop campus printing solution!
+                From class notes to event flyers,
+                we deliver quality and convenience in every page</p>
+        </div>
+        <aside class="aside">
+            <img src="{{ url_for('static', filename='print-ms-word.png') }}" alt="Printing Services">
+        </aside>
+    </section>
+
+    <section class="additional-info" id="additional-info">
+        <div class="work-done" data-count="1000">
+            <h2>Work Done</h2>
+            <p>Projects completed</p>
+            <span class="count">79</span>
+        </div>
+        <div class="happy-clients" data-count="98">
+            <h2>Happy Clients</h2>
+            <p>Client satisfaction rate</p>
+            <span class="count">98</span>%
+        </div>
+        <div class="years-of-exp" data-count="10">
+            <h2>Years of Experience</h2>
+            <p>In the printing industry</p>
+            <span class="count">1</span>+
+        </div>
+    </section>
+
+
+    <section class="contact">
+        <div class="contact-content">
+            <h2>Connect with Us</h2>
+            <p>We are here to assist you with all your printing needs. Fill out the form below or reach us through our contact details.</p>
+            <form action="/submit_contact_form" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+    
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+    
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+    
+    <section class="contact-info">
+        <div class="contact-info-content">
+            <h2>Our Contact Information</h2>
+            <p>If you have any questions or need assistance, feel free to reach out to us through the following channels:</p>
+            <ul>
+                <li><strong>Phone:</strong> <a href="tel:+123456789">+233558664534</a></li>
+                <li><strong>Email:</strong> <a href="mailto:info@printify.com">info@eprint.com</a></li>
+                <li><strong>Address:</strong> University of Cape Coast, Cape Coast, Ghana</li>
+            </ul>
+        </div>
+    </section>
+    
+    <section class="map">
+        <h2>Find Us</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=YOUR_MAP_EMBED_URL" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+    
+    <section class="social-media">
+        <h2>Follow Us</h2>
+        <ul>
+            <li><a href="https://facebook.com/yourpage" target="_blank">Facebook</a></li>
+            <li><a href="https://twitter.com/yourprofile" target="_blank">Twitter</a></li>
+            <li><a href="https://instagram.com/yourprofile" target="_blank">Instagram</a></li>
+            <li><a href="https://linkedin.com/company/yourcompany" target="_blank">LinkedIn</a></li>
+        </ul>
+    </section>
+    
+
+    <section class="about" id="about">
+        <div class="about-content">
+            <h2>About Printify</h2>
+            <div class="about-grid">
+                <div class="about-item">
+                    <img src="{{ url_for('static', filename='MISSION.jpg') }}" alt="Our Mission">
+                    <div class="about-text">
+                        <h3>Our Mission</h3>
+                        <p>At Printify, our mission is to provide high-quality, reliable, and cost-effective printing solutions to the campus community. We are committed to supporting your academic and creative needs with exceptional service and fast turnaround times.</p>
+                    </div>
+                </div>
+                <div class="about-item">
+                    <img src="{{ url_for('static', filename='team1.jpg') }}" alt="Our Team">
+                    <div class="about-text">
+                        <h3>Meet the Team</h3>
+                        <p>Our team is a dedicated group of professionals who are passionate about printing and customer service. We strive to deliver excellence in every project we undertake and are always here to assist you with a smile.</p>
+                    </div>
+                </div>
+                <div class="about-item">
+                    <img src="{{ url_for('static', filename='our_services.jpg') }}" alt="Our Services">
+                    <div class="about-text">
+                        <h3>Our Services</h3>
+                        <p>From academic documents and presentations to promotional materials and event flyers, Printify offers a range of printing services tailored to your needs. Explore our offerings and find the perfect solution for your project.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    
+
+    <footer class="footer">
+        <p> Entrepreneurship Class '24, Group 8</p>
+    </footer>
+    
+{% endblock %}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Printify</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='payment.css') }}">
+    {% block styles %}{% endblock %}
+</head>
+<body>
+    <div class="container">
+        <h1>Payment System</h1>
+        <form id="paymentForm" onsubmit="calculateTotal(event)">
+            <div class="form-group">
+                <label for="numberOfDocuments">Number of Documents:</label>
+                <input type="number" id="numberOfDocuments" name="numberOfDocuments" required>
+            </div>
+            <div class="form-group">
+                <label>Delivery Option:</label>
+                <label><input type="radio" name="deliveryOption" value="pickup" required> Pickup</label>
+                <label><input type="radio" name="deliveryOption" value="onCampus" required> Delivered to On Campus</label>
+                <label><input type="radio" name="deliveryOption" value="offCampus" required> Delivered to Off Campus</label>
+            </div>
+            <button type="submit">Calculate Total</button>
+        </form>
+        <div id="result" class="result"></div>
+        <button id="logoutButton" onclick="logout()">Logout</button>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

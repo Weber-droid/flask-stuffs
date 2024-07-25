@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Printify</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='sign_up.css') }}">
+    {% block styles %}{% endblock  %}
+</head>
+
+<body>
+    <header class="header">
+        <h1>Printify</h1>
+    </header>
+    <div class="container">
+        <div class="flex-box">
+            <div class="signup-box student">
+                <h2>Sign Up As a Student</h2>
+                <p>Join us to access the best printing services for students.</p>
+                <a href="/signup_student" class="signup-btn">Sign Up</a>
+            </div>
+            <div class="signup-box provider">
+                <h2>Sign Up As a Printing Provider</h2>
+                <p>Become a provider and offer your printing services to our users.</p>
+                <a href="/signup_printingprovider" class="signup-btn">Sign Up</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+</html>

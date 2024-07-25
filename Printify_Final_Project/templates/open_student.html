@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Printify</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='open_student.css') }}">
+    {% block styles %}{% endblock  %}
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome To <b>E-PRINT HUB</b> </h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="/submit_document">Printing Services</a></li>
+                <li><a href="/graphic_designing">Graphic Designing Services</a></li>
+            </ul>
+            <div class="logout-container">
+                <a href="/login_student" class="logout-link">Logout</a>
+            </div>
+        </nav>
+    </div>
+</body>
+</html>
+

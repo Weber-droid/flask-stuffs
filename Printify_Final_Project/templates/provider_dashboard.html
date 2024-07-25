@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Provider Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='provider_dashboard.css') }}">
+</head>
+<body>
+    <div class="header">
+        <h1>Provider Dashboard - {{ provider.name_of_shop }}</h1>
+        <a href="{{ url_for('login_printingprovider') }}" class="logout-button">Logout</a>
+    </div>
+    <ul>
+        {% for document in documents %}
+        <li>
+            <div>
+                <strong>Student ID:</strong> {{ document.student_id }} - 
+                <strong>Copies:</strong> {{ document.number_of_copies }} - 
+                <strong>Front and Back:</strong> {{ 'Yes' if document.front_and_back else 'No' }} - 
+                <strong>Binding:</strong> {{ 'Yes' if document.binding else 'No' }}
+            </div>
+            <div>
+                <a href="{{ url_for('static', filename='uploads/' ~ document.filename) }}" download>Download</a>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
